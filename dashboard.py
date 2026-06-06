@@ -141,12 +141,39 @@ with st.sidebar:
     st.markdown("**DataCo Analytics Dashboard**")
     st.markdown("---")
 
+    st.markdown('<div class="filter-title">User Profile / Role</div>', unsafe_allow_html=True)
+    role = st.selectbox(
+        label="role",
+        options=["General (All)", "Executive (Direction)", "Operations (Logistics)", "Marketing"],
+        label_visibility="collapsed",
+    )
+
     st.markdown('<div class="filter-title">View</div>', unsafe_allow_html=True)
+    
+    role_pages = {
+        "General (All)": [
+            "🏠 Executive Overview", 
+            "🚚 Shipping Analysis",
+            "🌍 Regional Performance", 
+            "🤖 Model Insights",
+            "🎯 A/B Test & Recommendations"
+        ],
+        "Executive (Direction)": [
+            "🏠 Executive Overview", 
+            "🎯 A/B Test & Recommendations"
+        ],
+        "Operations (Logistics)": [
+            "🚚 Shipping Analysis", 
+            "🤖 Model Insights"
+        ],
+        "Marketing": [
+            "🌍 Regional Performance"
+        ]
+    }
+    
     page = st.radio(
         label="page",
-        options=["🏠 Executive Overview", "🚚 Shipping Analysis",
-                 "🌍 Regional Performance", "🤖 Model Insights",
-                 "🎯 A/B Test & Recommendations"],
+        options=role_pages[role],
         label_visibility="collapsed",
     )
 
