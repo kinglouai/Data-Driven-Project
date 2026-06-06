@@ -125,7 +125,7 @@ COLORS = {
 # ── Data loading ─────────────────────────────────────────────
 @st.cache_data(show_spinner="Loading data…")
 def load_data():
-    df = pd.read_csv("DataCo_Enriched_Final.zip", encoding="latin-1")
+    df = pd.read_csv("data/DataCo_Enriched_Final.zip", encoding="latin-1")
     df["order_date"] = pd.to_datetime(df["order date (DateOrders)"], errors="coerce")
     df["order_month"] = df["order_date"].dt.to_period("M").astype(str)
     df["order_year"]  = df["order_date"].dt.year
