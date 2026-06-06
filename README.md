@@ -31,6 +31,7 @@ graph TD
 ├── dashboard.py               # Streamlit application source code
 ├── requirements.txt           # Project dependencies
 ├── README.md                  # Documentation and architecture overview
+├── AB_Test_Plan.pdf           # Experimental A/B Testing protocol details (PDF)
 ├── data/
 │   ├── DataCoSupplyChainDataset.zip     # Original raw transactions dataset
 │   ├── DescriptionDataCoSupplyChain.zip # Original data dictionary zip
